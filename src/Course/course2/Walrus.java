@@ -7,9 +7,9 @@ package Course.course2;
  */
 public class Walrus {
     public int length;
-    public int weight;
+    public double weight;
 
-    public Walrus(int length, int weight) {
+    public Walrus(int length, double weight) {
         this.length = length;
         this.weight = weight;
     }
@@ -22,7 +22,7 @@ public class Walrus {
         this.length = length;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
