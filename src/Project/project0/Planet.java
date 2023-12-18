@@ -60,4 +60,29 @@ public class Planet {
         return F;
     }
 
+    /**
+     * returns the force in x direction.
+     * @return
+     * F = f * dx / r
+     */
+    public double calcForceExertedByX(Planet p){
+        double r = calcDistance(p);
+        double F = calcForceExertedBy(p);
+        double dx = p.xxPos - xxPos;
+        double ForceByX = F * dx / r;
+        return ForceByX;
+    }
+
+    /**
+     * returns the force in y direction.
+     * @param p other planet
+     * @return
+     */
+    public double calcForceExertedByY(Planet p){
+        double r = calcDistance(p);
+        double F = calcForceExertedBy(p);
+        double dy = p.yyPos - yyPos;
+        double ForceByY = F * dy / r;
+        return ForceByY;
+    }
 }
