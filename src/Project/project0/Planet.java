@@ -133,8 +133,16 @@ public class Planet {
         xxPos = xxPos + xxVel * time;
         yyPos = yyPos + yyVel * time;
     }
-    /*
-    ax = fx / m
-    ay = fy / m
+
+    /**
+     * return the radius of fileName.
+     * @param fileName file name.
+     * @return radius.
      */
+    public double readRadius(String fileName){
+        In in = new  In(fileName);
+        int rank = in.readInt();
+        double radius = in.readDouble();
+        return radius;
+    }
 }
