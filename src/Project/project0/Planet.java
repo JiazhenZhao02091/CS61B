@@ -37,12 +37,27 @@ public class Planet {
 
     /**
      * returns a double var that mean this planet and the 'p' planet distance.
-     * @param p
-     * @return
+     * @param p the other planet.
+     * @return r mean the distance.
      */
     public double calcDistance(Planet p){
         double r = (xxPos - p.xxPos) * (xxPos - p.xxPos) + (yyPos - p.yyPos) * (yyPos - p.yyPos);
         r = Math.sqrt(r);
         return r;
     }
+
+    /**
+     * returns a double var, the force between This planet and the Planet p.
+     * @param p other planet p.
+     * @return force between the Planet ant the Planet p.
+     * calc formula: F = G * m1 * m2 / r^2;=6.67⋅10 -11
+     */
+    public double calcForceExertedBy(Planet p){
+        double F = mass * p.mass;
+        double r = calcDistance(p);
+        double G = 6.67e-11;
+        F = F * G / (r * r);
+        return F;
+    }
+
 }
