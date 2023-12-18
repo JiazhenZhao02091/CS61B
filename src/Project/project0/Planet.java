@@ -118,4 +118,23 @@ public class Planet {
         }
         return ForceY;
     }
+
+    /**
+     * update This planet bt the time and x of net force, y of net force.
+     * @param time consumer time.
+     * @param xNet x of net force.
+     * @param yNet y of net force.
+     */
+    public void update(double time, double xNet, double yNet){
+        double ax = xNet / mass;
+        double ay = yNet / mass;
+        xxVel = xxVel + ax * time;
+        yyVel = yyVel + ay * time;
+        xxPos = xxPos + xxVel * time;
+        yyPos = yyPos + yyVel * time;
+    }
+    /*
+    ax = fx / m
+    ay = fy / m
+     */
 }
