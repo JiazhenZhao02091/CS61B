@@ -35,6 +35,9 @@ public class Planet {
         imgFileName = b.imgFileName;
     }
 
+    public Planet() {
+    }
+
     /**
      * returns a double var that mean this planet and the 'p' planet distance.
      * @param p the other planet.
