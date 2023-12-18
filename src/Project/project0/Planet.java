@@ -77,6 +77,7 @@ public class Planet {
      * returns the force in y direction.
      * @param p other planet
      * @return
+     * F = f * dy / r
      */
     public double calcForceExertedByY(Planet p){
         double r = calcDistance(p);
@@ -84,5 +85,37 @@ public class Planet {
         double dy = p.yyPos - yyPos;
         double ForceByY = F * dy / r;
         return ForceByY;
+    }
+
+    /**
+     * return the all net force in x for This planet.
+     * @param planets all planets.
+     * @return the force in x direction.
+     */
+    public double calcNetForceExertedByX(Planet[] planets){
+        double ForceX = 0;
+        for(int i = 0 ; i < planets.length ; i ++)
+        {
+            if(planets[i].equals(this))
+                continue;
+            ForceX += this.calcForceExertedByX(planets[i]);
+        }
+        return ForceX;
+    }
+
+    /**
+     * return the all net force in 'y' for This planet.
+     * @param planets all planets.
+     * @return the force in 'y' direction.
+     */
+    public double calcNetForceExertedByY(Planet[] planets){
+        double  ForceY = 0 ;
+        for(int i = 0 ; i < planets.length ; i ++)
+        {
+            if(planets[i].equals(this))
+                continue;
+            ForceY += this.calcForceExertedByY(planets[i]);
+        }
+        return ForceY;
     }
 }
