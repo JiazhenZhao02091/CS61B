@@ -148,4 +148,11 @@ public class Planet {
         double radius = in.readDouble();
         return radius;
     }
+
+    /**
+     * draw a planet where it's position
+     */
+    public void draw(){
+        StdDraw.picture(xxPos,yyPos,"./images/" + imgFileName);
+    }
 }
