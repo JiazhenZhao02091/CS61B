@@ -1,4 +1,4 @@
-package Course.course2;
+package Course.course2.course1;
 
 /**
  * @author JiazhenZhao
