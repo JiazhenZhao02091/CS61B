@@ -12,3 +12,9 @@ public class mainTest {
         System.out.println(l.getItem(1).item);
     }
 }
+class Test{
+    public static void main(String[] args) {
+        int[] x = new int[10];
+    }
+
+}
