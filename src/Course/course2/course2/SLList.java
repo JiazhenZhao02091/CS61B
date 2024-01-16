@@ -20,7 +20,7 @@ public class SLList {
     }
     */
 
-    private IntNode first;
+    private IntNode sentinel;
     private int size;
 
     /**
@@ -28,11 +28,13 @@ public class SLList {
      */
     public SLList(){
         size = 0;
-        first = null;
+        sentinel = new IntNode(63,null);
     }
 
     public SLList(int x){
-        first = new IntNode(10, null);
+        sentinel = new IntNode(63,null);
+        IntNode first = new IntNode(10, null);
+        sentinel.next = first;
         size = 1;
     }
 
@@ -41,7 +43,11 @@ public class SLList {
      * @return
      */
     public int getFirst(){
-        return first.item;
+        if(sentinel.next == null){
+            System.out.println("No first item current.");
+            return -1;
+        }
+        return sentinel.next.item;
     }
 
     /**
@@ -51,8 +57,8 @@ public class SLList {
      */
     public IntNode getItem(int x){
         if(x == 0)
-            return this.first;
-        IntNode tmp = this.first;
+            return this.sentinel.next;
+        IntNode tmp = this.sentinel.next;
         while(x > 0){
             x --;
             tmp = tmp.next;
@@ -67,8 +73,8 @@ public class SLList {
     public void addFirst(int x){
         size ++;
         IntNode n = new IntNode(x, null);
-        n.next = this.first;
-        first = n;
+        n.next = this.sentinel.next;
+        sentinel.next = n;
     }
 
     /**
@@ -78,11 +84,7 @@ public class SLList {
     public void addLast(int x){
         size ++;
         IntNode n = new IntNode(x,null);
-        IntNode tmp = this.first;
-        if(tmp == null){
-            first = n;
-            return;
-        }
+        IntNode tmp = this.sentinel;
         while(tmp.next != null){
             tmp = tmp.next;
         }
@@ -94,8 +96,8 @@ public class SLList {
      * @return
      */
     public int my_size(){
-        int size = 1;
-        IntNode tmp = first;
+        int size = 0;
+        IntNode tmp = this.sentinel;
         while(tmp.next != null){
             size ++;
             tmp = tmp.next;
@@ -105,8 +107,7 @@ public class SLList {
 
     /**
      * return the size that begin with node p.
-     * @param p
-     * @return
+     * @return size.
      */
     /*private static int size(IntNode p){
         if(p.next == null)
@@ -119,20 +120,7 @@ public class SLList {
     }
 
     public static void main(String[] args) {
-        SLList l = new SLList(10);
-        l.addFirst(9);
-        l.addFirst(8);
-        l.addLast(11);
-        l.addLast(12);
-        l.addLast(13);
-        System.out.println(l.getItem(0).item);
-        System.out.println(l.getItem(1).item);
-        System.out.println(l.getItem(2).item);
-        System.out.println(l.getItem(3).item);
-        System.out.println("list size  = " + l.size());
-
-        SLList L  = new SLList();
-        L.addLast(10);
-        System.out.println(L.size());
+        SLList l = new SLList();
+        System.out.println(l.getFirst());
     }
 }
