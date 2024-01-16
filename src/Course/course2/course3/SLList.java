@@ -17,13 +17,14 @@ public class SLList {
      */
     public SLList(){
         size = 0;
-        sentinel = new IntNode(63,null);
+        sentinel = new IntNode(63,null,null);
     }
 
     public SLList(int x){
-        sentinel = new IntNode(63,null);
+        sentinel = new IntNode(63,null,null);
         IntNode first = new IntNode(10, null);
         sentinel.next = first;
+        first.prev = sentinel;
         size = 1;
         end = first;
     }
@@ -48,6 +49,10 @@ public class SLList {
     public IntNode getItem(int x){
         if(x == 0)
             return this.sentinel.next;
+        if(x > size){
+            System.out.println("bound error.");
+            return null;
+        }
         IntNode tmp = this.sentinel.next;
         while(x > 0){
             x --;
@@ -62,7 +67,8 @@ public class SLList {
      */
     public void addFirst(int x){
         size ++;
-        IntNode n = new IntNode(x, null);
+        IntNode n = new IntNode(x, null,sentinel);
+        this.sentinel.next.prev = n;
         n.next = this.sentinel.next;
         sentinel.next = n;
     }
@@ -73,7 +79,7 @@ public class SLList {
      */
     public void addLast(int x){
         size ++;
-        IntNode n = new IntNode(x,null);
+        IntNode n = new IntNode(x,sentinel,end);
         end.next = n;
         end = n;
     }
@@ -86,6 +92,8 @@ public class SLList {
         int size = 0;
         IntNode tmp = this.sentinel;
         while(tmp.next != null){
+            if(tmp.next == sentinel)
+                break;
             size ++;
             tmp = tmp.next;
         }
@@ -113,5 +121,7 @@ public class SLList {
         System.out.println(l.getItem(0).item);
         System.out.println(l.getItem(1).item);
         System.out.println(l.getItem(2).item);
+        System.out.println(l.size());
+        System.out.println(l.my_size());
     }
 }
