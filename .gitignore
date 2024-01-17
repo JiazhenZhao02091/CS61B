@@ -3,6 +3,7 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 .idea
+isc.iml
 CS61B.iml
 ### Eclipse ###
 .apt_generated
