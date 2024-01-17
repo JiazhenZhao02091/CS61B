@@ -1,27 +1,30 @@
 package Course.course2.course4;
+
+import static org.junit.Assert.assertEquals;
+
 /**
  * @author JiazhenZhao
  * 2024/1/17
  * 类说明：
  */
-public class AList {
-    private int[] items;
+public class AList<Item> {
+    private Item[] items;
     private int size;
 
     /** 重置数组 */
     public void Resize(int capacity){
-        int[] a = new int[capacity];
+        Item[] a = (Item[]) new Object[capacity];
         System.arraycopy(items,0,a,0,size);
         items = a;
     }
     /** Creates an empty list. */
     public AList() {
-        items = new int[100];
+        items = (Item[]) new Object[100];
         size = 0;
     }
 
     /** Inserts X into the back of the list. */
-    public void addLast(int x) {
+    public void addLast(Item x) {
         if(size == items.length)
             Resize(size * 2);
         items[size] = x;
@@ -29,12 +32,12 @@ public class AList {
     }
 
     /** Returns the item from the back of the list. */
-    public int getLast() {
+    public Item getLast() {
         return items[size - 1];
     }
     /** Gets the ith item in the list (0 is the front). */
-    public int get(int i) {
-        return items[i - 1];
+    public Item get(int i) {
+        return items[i];
     }
 
     /** Returns the number of items in the list. */
@@ -44,7 +47,8 @@ public class AList {
 
     /** Deletes item from back of the list and
      * returns deleted item. */
-    public int removeLast() {
+    public Item removeLast() {
+        items[size] = null;
         size --;
         return items[size];
     }

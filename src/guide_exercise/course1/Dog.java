@@ -1,4 +1,4 @@
-package Course.course1;
+package guide_exercise.course1;
 
 /**
  * @author JiazhenZhao
