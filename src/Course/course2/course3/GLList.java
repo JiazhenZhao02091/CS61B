@@ -1,11 +1,13 @@
 package Course.course2.course3;
 
+import Course.course4.course1.List61B;
+
 /**
  * @author JiazhenZhao
  * 2024/1/15
  * 类说明：
  */
-public class GLList<LocsNess> {
+public class GLList<LocsNess> implements List61B<LocsNess> {
 
     private StufNode sentinel;
     private int size;
@@ -84,6 +86,16 @@ public class GLList<LocsNess> {
         end = n;
     }
 
+    @Override
+    public LocsNess getLast() {
+        return null;
+    }
+
+    @Override
+    public LocsNess get(int i) {
+        return null;
+    }
+
     /**
      * return the SLList's size.
      * @return
@@ -112,6 +124,16 @@ public class GLList<LocsNess> {
      */
     public int size(){
         return size;
+    }
+
+    @Override
+    public LocsNess removeLast() {
+        return null;
+    }
+
+    @Override
+    public void dy_resize() {
+
     }
 
     public static void main(String[] args) {

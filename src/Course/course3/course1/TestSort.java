@@ -33,6 +33,11 @@ public class TestSort {
         System.out.println("PASS ALL CASES !!!");
     }
 
+    @Test
+    public void print(){
+        System.out.println("Hello, world !!!");
+    }
+
     public static void main(String[] args) {
 //        TestSortMethod();
     }

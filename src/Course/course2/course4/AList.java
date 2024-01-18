@@ -1,5 +1,7 @@
 package Course.course2.course4;
 
+import Course.course4.course1.List61B;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -7,7 +9,7 @@ import static org.junit.Assert.assertEquals;
  * 2024/1/17
  * 类说明：
  */
-public class AList<Item> {
+public class AList<Item> implements List61B<Item> {
     private Item[] items;
     private int size;
 
@@ -41,6 +43,7 @@ public class AList<Item> {
     }
 
     /** Returns the number of items in the list. */
+    @Override
     public int size() {
         return size;
     }
