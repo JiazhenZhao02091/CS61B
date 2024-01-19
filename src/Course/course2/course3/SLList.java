@@ -19,7 +19,7 @@ public class SLList {
         size = 0;
         sentinel = new IntNode(63,null,null);
     }
-
+    /** use a int variable create list. */
     public SLList(int x){
         sentinel = new IntNode(63,null,null);
         IntNode first = new IntNode(10, null);
@@ -27,6 +27,13 @@ public class SLList {
         first.prev = sentinel;
         size = 1;
         end = first;
+    }
+    /** use numbers create list. */
+    public SLList(int[] nums){
+        SLList l = new SLList(nums[0]);
+        for(int i = 1 ; i <= nums.length ; i ++){
+            l.addLast(nums[i]);
+        }
     }
 
     /**
@@ -112,6 +119,16 @@ public class SLList {
      */
     public int size(){
         return size;
+    }
+
+    /**
+     * delete the first member in the array.
+     */
+    public void deleteFirst(){
+        IntNode tmp = this.sentinel.next;
+        this.sentinel.next = tmp.next;
+        tmp = null;
+        size --;
     }
 
     public static void main(String[] args) {
