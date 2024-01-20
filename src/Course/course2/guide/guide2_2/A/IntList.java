@@ -1,7 +1,4 @@
-package Course.course2.guide.A2;
-
-import Project.project0.In;
-import org.junit.Test;
+package Course.course2.guide.guide2_2.A;
 
 /**
  * @author JiazhenZhao
