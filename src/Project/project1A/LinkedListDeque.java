@@ -1,32 +1,32 @@
 package Project.project1A;
-
-
 /**
  * @author JiazhenZhao
  * 2024/1/20
- * 类说明：
  * *    add 和 remove 操作不得涉及任何循环或递归。
  * 单个此类操作必须花费“恒定时间”，即执行时间不应 取决于双端队列的大小。
  * *    get必须使用迭代，而不是递归
  * *    size必须花费恒定的时间
  */
-/** Progress 1
+
+/** Progress 1 Sentinel and Two sentinel
  *  为了避免出现前后空指针的情况，因此可以使用一个固定存在的哨兵节点
  *  同时，为了实现队列的前后增删，可以使用两个哨兵
- * */
+ */
+
+/** Progress 2 Circle sentinel
+ * 使用循环哨兵指针可以减少哨兵的数量
+ * 同时可以减少代码长度以及提升运行速度
+ */
 public class LinkedListDeque<T> {
-    private LinkNode sentFront; // front 哨兵节点
-    private LinkNode sentBack;  // back 哨兵节点
-    private LinkNode first;    // first of the linkDeque.
-    private LinkNode end;      // end of the linkDeque
-    private int size;          // queue size.
+    private LinkNode sentinel;  // sentinel 哨兵节点
+    private int size;           // queue size.
 
     public LinkedListDeque() {
         size = 0;
         LinkNode n = new LinkNode(63, null, null);
-        sentFront = n;
-        LinkNode m = new LinkNode(63, null, null);
-        sentBack = m;
+        n.next = n.prev;
+        n.prev = n;
+        sentinel = n;
     }
     /**
      * 使用一个参数创建 LinkListDeque
@@ -34,13 +34,15 @@ public class LinkedListDeque<T> {
     public LinkedListDeque(T item) {
         // Make Sentinel Node.
         LinkNode n = new LinkNode(63, null, null);
-        sentFront = n;
-        LinkNode m = new LinkNode(63, null, null);
-        sentBack = m;
+        n.next = n.prev;
+        n.prev = n;
+        sentinel = n;
         // Make Data Node .
-        LinkNode<T> node = new LinkNode<>(item, sentBack, sentFront);
-        sentFront.next = node;
-        sentBack.prev = node;
+        LinkNode<T> node = new LinkNode<>(item, null, null);
+        node.prev = sentinel;
+        node.next = sentinel;
+        sentinel.prev = node;
+        sentinel.next = node; // circle
         size = 1;
 
     }
@@ -50,9 +52,10 @@ public class LinkedListDeque<T> {
      * @param item
      */
     public void addFirst(T item) {
-        LinkNode<T> tmp = new LinkNode<>(item, null,sentFront);
-        tmp.next = sentFront.next;
-        sentFront.next = tmp;
+        LinkNode<T> tmp = new LinkNode<>(item, null,null);
+        tmp.next = sentinel.next;
+        tmp.prev = sentinel;
+        sentinel.next = tmp;
         size++;
     }
 
@@ -61,9 +64,11 @@ public class LinkedListDeque<T> {
      * @param item
      */
     public void addLast(T item) {
-        LinkNode<T> tmp = new LinkNode<>(item, sentBack,sentBack.prev);
-        sentBack.prev.next = tmp;
-        sentBack.prev = tmp;
+        LinkNode<T> tmp = new LinkNode<>(item, null, null);
+        tmp.prev = sentinel.prev;
+        sentinel.prev.next = tmp;
+        tmp.next = sentinel;
+        sentinel.prev = tmp;
         size ++;
     }
 
@@ -76,27 +81,28 @@ public class LinkedListDeque<T> {
     }
 
     public void printDeque() {
-        LinkNode tmp = sentFront.next;
+        LinkNode tmp = sentinel.next;
         while(tmp != null){
             System.out.print(tmp.item + " ");
             tmp = tmp.next;
-            if(tmp == sentBack || tmp == sentFront)
+            if(tmp == sentinel)
                 break;
         }
         System.out.println();
     }
 
     public T removeFirst() {
-        T tmp = (T) sentFront.next.item;
-        sentFront.next = sentFront.next.next;
+        T tmp = (T) sentinel.next.item;
+        sentinel.next = sentinel.next.next;
+        sentinel.next.prev = sentinel;
         size --;
         return tmp;
     }
 
     public T removeLast() {
-        T tmp = (T) sentBack.prev.item;
-        sentBack.prev.prev.next = sentBack;
-        sentBack.prev = sentBack.prev.prev;
+        T tmp = (T) sentinel.prev.item;
+        sentinel.prev = sentinel.prev.prev;
+        sentinel.prev.next = sentinel;
         size --;
         return tmp;
     }
@@ -104,7 +110,7 @@ public class LinkedListDeque<T> {
     public T get(int index) {
         if(index >= size)
             return null;
-        LinkNode tmp = sentFront.next;
+        LinkNode tmp = sentinel.next;
         while(index > 0) {
             tmp = tmp.next;
             index --;
@@ -121,11 +127,11 @@ public class LinkedListDeque<T> {
 
 
     public void print(){
-        LinkNode tmp = sentFront.next;
+        LinkNode tmp = sentinel.next;
         while(tmp != null){
             System.out.print(tmp.item + " ");
             tmp = tmp.next;
-            if(tmp == sentBack || tmp == sentFront)
+            if(tmp == sentinel)
                 break;
         }
         System.out.println();
