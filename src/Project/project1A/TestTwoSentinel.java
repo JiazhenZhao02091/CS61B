@@ -1,15 +1,13 @@
 package Project.project1A;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  * @author JiazhenZhao
- * 2024/1/20
+ * 2024/1/21
  * 类说明：
  */
-public class MainTest {
-
+public class TestTwoSentinel {
 
     /** Print */
     @Test
@@ -20,6 +18,7 @@ public class MainTest {
         l.addLast(3);
         l.printDeque();
     }
+
     /** Add */
     @Test
     public void test1() {
@@ -40,11 +39,9 @@ public class MainTest {
         l.print();
         // 0 1 2 3
         int r1 = l.removeFirst();
-        System.out.println(r1);
         l.print();
         // 1 2 3
         int r2 = l.removeLast();
-        System.out.println(r2);
         // 1 2
         l.print();
     }
