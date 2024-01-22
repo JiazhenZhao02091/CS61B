@@ -7,21 +7,21 @@ import com.sun.xml.internal.bind.v2.TODO;
  * 2024/1/20
  * 类说明：
  */
-public class ArrayDeque<Item> {
-    private Item[] items;
-    private int size;
-    private int first;
-    private int end;
+public class ArrayDeque<T> {
+    public T[] items;
+    public int size;
+    public int first;
+    public int end;
 
     public ArrayDeque() {
-        items = (Item[]) new Object[8];
+        items = (T[]) new Object[8];
         size = 0;
         first = 0;
         end = 1;
     }
 
-    public ArrayDeque(Item[] nums) {
-        items = (Item[]) new Object[nums.length * 2];
+    public ArrayDeque(T[] nums) {
+        items = (T[]) new Object[nums.length * 2];
         System.arraycopy(nums, 0, items, 1, nums.length);
         size = nums.length;
         first = 0;
@@ -29,7 +29,7 @@ public class ArrayDeque<Item> {
     }
 
     public void resize(int capacity) {
-        Item[] new_items = (Item[]) new Object[capacity];
+        T[] new_items = (T[]) new Object[capacity];
         for(int i = 1 ; i <= size ; i ++){
             new_items[i] = this.get(i - 1);
         }
@@ -43,35 +43,42 @@ public class ArrayDeque<Item> {
            因此此时如果调用该函数会导致，数组访问冲突。
      Solution : checkFEBount();
     */
-    public void addFirst(Item x) {
+    public void addFirst(T x) {
         if (size >= items.length)
             resize(size * 2);
         items[first] = x;
         first --;
         first = (first + items.length) % items.length;
         size ++;
+        checkFEBount();
     }
 
-    public void addLast(Item x) {
+    public void addLast(T x) {
         if (size >= items.length)
             resize(size * 2);
         items[end] = x;
         end ++;
+        end = end % items.length;
         size ++;
+        checkFEBount();
     }
 
-    public Item removeFirst() {
+    public T removeFirst() {
+        if(size == 0)
+            return (T) (Integer)9;
         size --;
-        Item tmp = items[first];
         first = (first + 1) % items.length;
+        T tmp = items[first];
         checkFEBount();
         return tmp;
     }
 
-    public Item removeLast() {
+    public T removeLast() {
+        if(size == 0)
+            return (T) (Integer)9;
         size--;
-        Item tmp = items[end];
         end = end - 1;
+        T tmp = items[end];
         checkFEBount();
         return tmp;     // 假如只剩一个的时候，first 和 end 会指向同一个点。
     }
@@ -92,14 +99,15 @@ public class ArrayDeque<Item> {
 
     public void checkFEBount(){
         if(first == end)
-            end = (first + 1) % items.length;
+            resize(size * 2);
+//            end = (first + 1) % items.length;
     }
 
     public int size() {
         return size;
     }
 
-    public Item get(int index) {
+    public T get(int index) {
         return items[(first + 1 + index) % items.length];
     }
 
