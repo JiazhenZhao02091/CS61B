@@ -1,4 +1,3 @@
-package Project.project1A;
 /**
  * @author JiazhenZhao
  * 2024/1/20

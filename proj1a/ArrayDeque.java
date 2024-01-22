@@ -1,6 +1,3 @@
-package Project.project1A;
-
-import com.sun.xml.internal.bind.v2.TODO;
 
 /**
  * @author JiazhenZhao
