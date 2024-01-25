@@ -1,13 +1,13 @@
-package Course.course2.guide.guide2_3.B;
+package guide_exercise.guide2_3;
 
 /**
  * @author JiazhenZhao
  * 2024/1/20
  * 类说明：
  */
-public class Deck{
+public class BLevel {
     public static  int[] cards;
-    Deck(){
+    BLevel(){
         cards = new int[]{1, 3, 4, 10};
     }
     public static void print(){
@@ -17,17 +17,17 @@ public class Deck{
         System.out.println();
     }
     public static void main(String[] args) {
-        Deck dingie = new Deck();
+        BLevel dingie = new BLevel();
         dingie.cards[3] = 3;
-        Deck.print();
-        Deck pilates = new Deck();
+        BLevel.print();
+        BLevel pilates = new BLevel();
         pilates.cards[1] = 2;
-        Deck.print();
+        BLevel.print();
         int[] newArrWhoDis = {2, 2, 4, 1, 3};
         dingie.cards = pilates.cards;
         pilates.cards = newArrWhoDis;
         newArrWhoDis = null;
-        Deck.print();
+        BLevel.print();
     }
 }
 

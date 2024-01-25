@@ -1,4 +1,4 @@
-package Course.course2.guide.guide2_2.A;
+package guide_exercise.guide2_2.A;
 
 import org.junit.Test;
 
