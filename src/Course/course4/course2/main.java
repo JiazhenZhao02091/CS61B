@@ -16,7 +16,6 @@ public class main {
  *  针对于重写方法（Override）实际调用的方法基于  **动态类型**
  *      如果没重写就会出现 Compile error ，即使继承子类中具有该方法
  */
-
 /*
     children c = new children()
     father f = c;
