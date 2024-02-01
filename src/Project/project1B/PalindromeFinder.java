@@ -1,11 +1,12 @@
 package Project.project1B;
 
+import Project.project0.In;
+
 /** This class outputs all palindromes in the words file in the current directory. */
 public class PalindromeFinder {
-    /*
     public static void main(String[] args) {
         int minLength = 4;
-        In in = new In("../library-sp18/data/words.txt");
+        In in = new In("F:\\workspace\\CS61B\\cs61b\\library-sp18\\data\\words.txt");
         Palindrome palindrome = new Palindrome();
 
         while (!in.isEmpty()) {
@@ -14,5 +15,6 @@ public class PalindromeFinder {
                 System.out.println(word);
             }
         }
-    } Uncomment this class once you've written isPalindrome. */
+    }
+    /* Uncomment this class once you've written isPalindrome. */
 }

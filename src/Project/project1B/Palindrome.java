@@ -25,19 +25,26 @@ public class Palindrome {
         if (word.length() == 0 || word.length() == 1)
             return true;
         int flag = word.length() / 2;
-        if (word.length() % 2 == 0) {
-            for (int i = 0; i < flag; i++) {
-                char front = word.charAt(i);
-                char back = word.charAt(word.length() - 1 - i);
-                if (back != front)
-                    return false;
-            }
-            return true;
-        }
         for (int i = 0; i < flag; i++) {
             char front = word.charAt(i);
             char back = word.charAt(word.length() - 1 - i);
             if (back != front)
+                return false;
+        }
+        return true;
+    }
+
+    // overload Functions.
+    public boolean isPalindrome(String word, CharacterComparator cc) {
+        if (word.length() == 0 || word.length() == 1)
+            return true;
+
+        // cad
+        int flag = word.length() / 2;
+        for (int i = 0; i < flag; i++) {
+            char front = word.charAt(i);
+            char back = word.charAt(word.length() - 1 - i);
+            if (!cc.equalChars(front, back))
                 return false;
         }
         return true;
