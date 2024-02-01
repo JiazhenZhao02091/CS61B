@@ -13,6 +13,7 @@ public class TestOffByOne {
     Uncomment this class once you've created your CharacterComparator interface and OffByOne class. **/
 
     static CharacterComparator offByOne = new OffByOne();
+    static CharacterComparator offByN = new OffByN(5);
 
     @Test
     public void testOffByOne(){
@@ -20,6 +21,14 @@ public class TestOffByOne {
         assertTrue(offByOne.equalChars('c','d'));
         assertFalse(offByOne.equalChars('a','a'));
         assertFalse(offByOne.equalChars('b','b'));
+        System.out.println("PASSED ALL CASE !!!");
+    }
+
+    @Test
+    public void testOffByN(){
+        System.out.println(offByN.equalChars('a','f'));
+        System.out.println(offByN.equalChars('f','a'));
+        System.out.println(offByN.equalChars('f','h'));
         System.out.println("PASSED ALL CASE !!!");
     }
 }
