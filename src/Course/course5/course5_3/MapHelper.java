@@ -13,6 +13,7 @@ public class MapHelper {
 
     /**
      * 在继承中使用 extends 意义是使子类继承父类的功能
+     * Type upper bounds:
      * 在泛型中使用 extends 意义是约束方法必须必备某种特性而不是赋予新功能；
      *      它只是告诉你事情，而没有做太多的事情
      */
