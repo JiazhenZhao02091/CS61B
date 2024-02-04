@@ -10,6 +10,10 @@ import org.junit.Test;
 public class OverReadandOverLoad {
 
     public interface Animal {
+        default public void d(int x) {
+            System.out.println("Animal d ....");
+        }
+
         default public void a(Animal animal) {
             System.out.println("Animal a ...");
         }
@@ -31,6 +35,7 @@ public class OverReadandOverLoad {
             System.out.println("Dog a ...");
         }
 
+
         @Override
         public void b() {
             System.out.println("Dog b ...");
@@ -41,9 +46,10 @@ public class OverReadandOverLoad {
     public void test() {
         Dog d = new Dog();
         Animal a = new Dog();
-        d.a(d);
-        d.a(a); // Dog d
+        d.a(d); // Dog a
+        d.a(a); // Animal a
         a.a(d); // Animal a
+        a.b();
         /**
          * 重载是相同的函数名称，可能具有不同的参数
          * 子类方法中区分开重写和重载
@@ -53,6 +59,10 @@ public class OverReadandOverLoad {
          *  * 因为 Dog 继承自 Animal，可能会有新的改变
          *  * 所以 Java 特性就会选择 Animal 匹配的方法，因为他一定不会出错
          *  * 且优先选择静态变量的方法
+         */
+        /**
+         * 重写方法看动态类型
+         * 重载方法看静态类型
          */
     }
 }

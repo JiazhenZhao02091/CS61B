@@ -1,4 +1,4 @@
-package Homework.Homework1;
+package Homework.Homework0;
 
 /**
  *  Tests the Planet constructor.
