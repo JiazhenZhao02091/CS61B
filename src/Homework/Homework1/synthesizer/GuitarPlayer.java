@@ -1,5 +1,6 @@
-import edu.princeton.cs.algs4.StdAudio;
-import synthesizer.GuitarString;
+package Homework.Homework1.synthesizer;
+
+
 
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MetaMessage;
