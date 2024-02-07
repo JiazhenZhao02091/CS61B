@@ -1,6 +1,6 @@
-package Course.course9.course2;
+package Course.course9;
 
-import Course.course9.course1.DisjointSets;
+import Course.course9.DisjointSets;
 
 import java.util.HashSet;
 import java.util.LinkedList;
