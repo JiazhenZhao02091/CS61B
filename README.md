@@ -1,5 +1,7 @@
 # CS61b
 
+## 主体内容在`src`目录下，包括`lab` `homework` `project`
+
 ## 高效编程(`efficient programming`)
 
 ### 编程成本
