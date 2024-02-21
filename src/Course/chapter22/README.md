@@ -1,0 +1,28 @@
+- Tree
+    - 两个节点之间只能有一条边
+- 遍历
+    - BFS
+    - DFS
+        - pre-order
+        - in-order
+        - post-order
+- Graph
+    - 一组节点
+    - 一组零或多条边，每个边链接两个节点
+- 循环图
+- 非循环图
+- 有向图
+- 无向图
+- 权重图
+
+
+- Problem
+    - s-t Path: Is there a path between vertices s and t?
+    - Connectivity: Is the graph connected, i.e. is there a path between all vertices?
+    - Biconnectivity: Is there a vertex whose removal disconnects the graph?
+    - Shortest s-t Path: What is the shortest path between vertices s and t?
+    - Cycle Detection: Does the graph contain any cycles?
+    - Euler Tour: Is there a cycle that uses every edge exactly once?
+    - Hamilton Tour: Is there a cycle that uses every vertex exactly once?
+    - Planarity: Can you draw the graph on paper with no crossing edges?
+    - Isomorphism: Are two graphs isomorphic (the same graph in disguise)?
