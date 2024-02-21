@@ -1,9 +1,7 @@
 package Lab.lab7.src;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Set;
+import java.util.*;
+import java.util.function.Consumer;
 
 /**
  * @author JiazhenZhao
@@ -14,6 +12,7 @@ import java.util.Set;
  */
 public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
 
+    /** BSTMap's Node class */
     private class Node {
         private K key;
         private V value;
@@ -32,6 +31,28 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
             this.value = null;
             this.left_node = null;
             this.right_node = null;
+        }
+    }
+
+    /** BSTMap's iterator class */
+    private class BSTMapiterator<K> implements Iterator<K>{
+        int current_size;
+        K[] items;
+        public BSTMapiterator(Set<K> set){
+            current_size = 0;
+            items = set.toArray((K[]) new Object[0]);
+        }
+
+        @Override
+        public boolean hasNext() {
+            return current_size < size();
+        }
+
+        @Override
+        public K next() {
+            K returnItem = items[current_size];
+            current_size += 1;
+            return returnItem;
         }
     }
 
@@ -190,19 +211,38 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
 
     @Override
     public Set<K> keySet() {
-        return null;
+        Set<K> set = new HashSet<>();
+        if(root_node == null){
+            System.out.println("Current BSTMap is null !!!");
+            return set;
+        }
+        Node tmp_node = root_node;
+        Queue<Node> queue = new LinkedList<Node>();
+        queue.add(tmp_node);
+        while (queue.size() != 0) {
+            Node x = queue.remove();
+            set.add(x.key);
+            if(x.left_node != null)
+                queue.add(x.left_node);
+            if(x.right_node != null)
+                queue.add(x.right_node);
+        }
+        return set;
     }
 
+    /** 使用 Hibbard 删除*/
     @Override
     public V remove(K key) {
         return null;
     }
 
+
     @Override
     public Iterator<K> iterator() {
-        return null;
+        return new BSTMapiterator(keySet());
     }
 
+    /** 按层级打印输出所有的节点 */
     public void printInOrder() {
         if(root_node == null){
             System.out.println("Current BSTMap is null !!!");

@@ -2,6 +2,9 @@ package Lab.lab7.src;
 
 import org.junit.Test;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @author JiazhenZhao
  * 2024/2/21
@@ -79,5 +82,22 @@ public class BST_test {
         map.clear();
         System.out.println(map.size);
         map.printInOrder();
+    }
+
+    /** KeySet */
+    @Test
+    public void test6(){
+        BSTMap<Integer, String> map = new BSTMap<>();
+        map.put(1, "a1");
+        map.put(1, "a2");
+        map.put(2, "b");
+        map.put(3, "c");
+        map.put(4, "c");
+        map.put(6, "c");
+        System.out.println(map.size());
+        map.printInOrder();
+        Set<Integer> set = map.keySet();
+        System.out.println("set size = " + set.size() + " map size = " + map.size());
+
     }
 }
