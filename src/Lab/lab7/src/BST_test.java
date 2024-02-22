@@ -100,4 +100,74 @@ public class BST_test {
         System.out.println("set size = " + set.size() + " map size = " + map.size());
 
     }
+
+    /** remove that no child */
+    @Test
+    public void test7(){
+        BSTMap<Integer, String> map = new BSTMap<>();
+        map.put(15, "a");
+        map.put(20, "a");
+        map.put(5, "a");
+        map.put(8, "a");
+        map.put(9, "a");
+        map.put(7, "a");
+        map.put(3, "a");
+        map.put(4, "a");
+        map.put(2, "a");
+        map.printInOrder();
+
+        map.remove(20);
+        System.out.println("remove ... ");
+        System.out.println("size = " + map.size());
+        map.printInOrder();
+
+        map.remove(9);
+        System.out.println("remove ...");
+        System.out.println("size = " + map.size());
+        map.printInOrder();
+    }
+
+    /** remove that one child*/
+    @Test
+    public void test8(){
+        BSTMap<Integer, String> map = new BSTMap<>();
+        map.put(15, "a");
+        map.put(20, "a");
+        map.put(5, "a");
+        map.put(8, "a");
+        map.put(9, "a");
+        map.put(7, "a");
+        map.put(3, "a");
+        map.put(4, "a");
+        map.put(2, "a");
+
+        map.put(22, "a");
+        map.printInOrder();
+        System.out.println("size = " + map.size());
+
+        map.remove(20);
+        map.printInOrder();
+        System.out.println("size = " + map.size());
+
+    }
+    
+     /** remove that two child*/
+    @Test
+    public void test9(){
+        BSTMap<Integer, String> map = new BSTMap<>();
+        map.put(15, "a");
+        map.put(20, "a");
+        map.put(5, "a");
+        map.put(8, "a");
+        map.put(9, "a");
+        map.put(7, "a");
+        map.put(3, "a");
+        map.put(4, "a");
+        map.put(2, "a");
+        map.printInOrder();
+        System.out.println("size = " + map.size());
+        map.remove(5);
+        map.printInOrder();
+        System.out.println("size = " + map.size());
+    }
 }
