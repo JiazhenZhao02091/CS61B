@@ -47,7 +47,7 @@ public class TestMyHashMap {
         for (int i = 0; i < 455; i++) {
             b.put("hi" + i, i);
             //make sure put is working via containsKey and get
-            assertEquals((long)b.get("hi" + i), i);
+            assertEquals((long) b.get("hi" + i), i);
             assertTrue(b.containsKey("hi" + i));
         }
         assertEquals(b.size(), 455);
@@ -73,7 +73,7 @@ public class TestMyHashMap {
 
         // Recall that even with a null value, containsKey should return true
         b.put("hashBrowns", null);
-        assertTrue(b.containsKey("hashBrowns")) ;
+        assertTrue(b.containsKey("hashBrowns"));
     }
 
     // assumes put works
@@ -86,10 +86,10 @@ public class TestMyHashMap {
     public static void sanityGetTest(MyHashMap<String, Integer> b) {
         assertNull(b.get("starChild"));
         b.put("starChild", 5);
-        assertEquals((long)b.get("starChild"), 5) ;
+        assertEquals((long) b.get("starChild"), 5);
         b.put("KISS", 5);
-        assertEquals((long)b.get("KISS"), 5) ;
-        assertEquals((long)b.get("starChild"), 5) ;
+        assertEquals((long) b.get("KISS"), 5);
+        assertEquals((long) b.get("starChild"), 5);
     }
 
     // assumes put works
@@ -100,13 +100,13 @@ public class TestMyHashMap {
     }
 
     public static void sanitySizeTest(MyHashMap<String, Integer> b) {
-        assertEquals((long)b.size(), 0);
+        assertEquals((long) b.size(), 0);
         b.put("hi", 1);
-        assertEquals((long)b.size(), 1);
+        assertEquals((long) b.size(), 1);
         for (int i = 0; i < 455; i++) {
             b.put("hi" + i, 1);
         }
-        assertEquals((long)b.size(), 456);
+        assertEquals((long) b.size(), 456);
     }
 
     //assumes get/containskey work
@@ -118,8 +118,8 @@ public class TestMyHashMap {
 
     public static void sanityPutTest(MyHashMap<String, Integer> b) {
         b.put("hi", 1);
-        assertTrue(b.containsKey("hi")) ;
-        assertEquals((long)b.get("hi"), 1) ;
+        assertTrue(b.containsKey("hi"));
+        assertEquals((long) b.get("hi"), 1);
     }
 
     // Test for general functionality and that the properties of Maps hold.
@@ -131,47 +131,48 @@ public class TestMyHashMap {
 
     public static void functionalityTest(MyHashMap<String, String> dictionary,
                                          MyHashMap<String, Integer> studentIDs) {
-        assertEquals((long)dictionary.size(), 0);
+        assertEquals((long) dictionary.size(), 0);
 
         // can put objects in dictionary and get them
         dictionary.put("hello", "world");
         assertTrue(dictionary.containsKey("hello"));
         assertEquals(dictionary.get("hello"), "world");
-        assertEquals((long)dictionary.size(), 1);
+        assertEquals((long) dictionary.size(), 1);
 
         // putting with existing key updates the value
         dictionary.put("hello", "kevin");
-        assertEquals((long)dictionary.size(), 1);
+        assertEquals((long) dictionary.size(), 1);
         assertEquals(dictionary.get("hello"), "kevin");
 
         // putting key in multiple times does not affect behavior
         studentIDs.put("sarah", 12345);
-        assertEquals((long)studentIDs.size(), 1);
-        assertEquals((long)studentIDs.get("sarah"), 12345);
+        assertEquals((long) studentIDs.size(), 1);
+        assertEquals((long) studentIDs.get("sarah"), 12345);
         studentIDs.put("alan", 345);
-        assertEquals((long)studentIDs.size(), 2);
-        assertEquals((long)studentIDs.get("sarah"), 12345);
-        assertEquals((long)studentIDs.get("alan"), 345);
-        studentIDs.put("alan", 345);
-        assertEquals(studentIDs.size(), 2);
-        assertEquals((long)studentIDs.get("sarah"), 12345);
-        assertEquals((long)studentIDs.get("alan"), 345);
+        assertEquals((long) studentIDs.size(), 2);
+        assertEquals((long) studentIDs.get("sarah"), 12345);
+        assertEquals((long) studentIDs.get("alan"), 345);
         studentIDs.put("alan", 345);
         assertEquals(studentIDs.size(), 2);
-        assertEquals((long)studentIDs.get("sarah"), 12345);
-        assertEquals((long)studentIDs.get("alan"), 345);
+        assertEquals((long) studentIDs.get("sarah"), 12345);
+        assertEquals((long) studentIDs.get("alan"), 345);
+        studentIDs.put("alan", 345);
+        assertEquals(studentIDs.size(), 2);
+        assertEquals((long) studentIDs.get("sarah"), 12345);
+        assertEquals((long) studentIDs.get("alan"), 345);
         assertTrue(studentIDs.containsKey("sarah"));
         assertTrue(studentIDs.containsKey("alan"));
 
         // handle values being the same
-        assertEquals((long)studentIDs.get("alan"), 345);
+        assertEquals((long) studentIDs.get("alan"), 345);
         studentIDs.put("evil alan", 345);
-        assertEquals((long)studentIDs.get("evil alan"), 345);
+        assertEquals((long) studentIDs.get("evil alan"), 345);
         assertEquals(studentIDs.get("alan"), studentIDs.get("evil alan"));
     }
 
-    /** Tests that the backing array is resized when the load factor is exceeded.
-     *  In addition, times out if it takes too long (e.g. arithmetically instead of geometrically).
+    /**
+     * Tests that the backing array is resized when the load factor is exceeded.
+     * In addition, times out if it takes too long (e.g. arithmetically instead of geometrically).
      */
     @DisplayName("resize")
     @Test
@@ -189,20 +190,21 @@ public class TestMyHashMap {
             for (int i = 0; i < 1000000; i++) {
                 m.put("hi" + i, i);
                 if (1.0 * i / backingArrayCapacity > loadFactor) {
-                    // TODO
-//                    (sizeOfBackingArray(m)).isGreaterThan(backingArrayCapacity);
+                    assertTrue(sizeOfBackingArray(m) > backingArrayCapacity);
                     backingArrayCapacity = sizeOfBackingArray(m);
                 }
             }
         });
     }
 
-    /** Returns the length of the backing array of the given map.
-     *  Be sure that you only use one instance variable to hold the buckets,
-     *  otherwise this will not work properly.
-     *
-     *  Don't worry about knowing how this method works. */
-    private static <K, V> int sizeOfBackingArray(MyHashMap<K, V> m) {
+    /**
+     * Returns the length of the backing array of the given map.
+     * Be sure that you only use one instance variable to hold the buckets,
+     * otherwise this will not work properly.
+     * <p>
+     * Don't worry about knowing how this method works.
+     */
+    private static <K extends Comparable<K>, V> int sizeOfBackingArray(MyHashMap<K, V> m) {
         Class<?> clazz = m.getClass();
         if (clazz.getSuperclass().equals(MyHashMap.class)) {
             // anonymous bucketed extensions of MyHashMap
@@ -211,14 +213,12 @@ public class TestMyHashMap {
         for (Field field : clazz.getDeclaredFields()) {
             field.setAccessible(true);
             if (field.getType() == Collection[].class) {
-                /*
                 try {
                     Collection<MyHashMap<K, V>.Node>[] backingArray = (Collection[]) field.get(m);
                     return backingArray.length;
                 } catch (IllegalAccessException e) {
                     throw new RuntimeException(e);
                 }
-                 */
             }
         }
 
@@ -235,10 +235,10 @@ public class TestMyHashMap {
     /**
      * This test uses an unusual hash function and equals method to
      * capture some strange edge case behavior with collisions.
-     *
+     * <p>
      * If you're stuck on this test, use the debugger to see what values are
      * expected from the reference map, which is Java's built-in HashMap.
-     *
+     * <p>
      * If you're still stuck, walk through the expected behavior by hand.
      * Does your map behave the same way?
      * Note Bee's strange equals and hashCode implementations!
@@ -263,14 +263,15 @@ public class TestMyHashMap {
         assertEquals(map.containsKey(b2), ref.containsKey(b2));
 
         Bee b61 = new Bee(-61);
+        map.printHashMap();
         assertEquals(map.get(b61), ref.get(b61));
         assertEquals(map.containsKey(b61), ref.containsKey(b61));
-        assertEquals(map.size(),ref.size());
+        assertEquals(map.size(), ref.size());
 
         map.put(b61, -61);
         ref.put(b61, -61);
-        assertEquals(map.get(b1), ref.get(b1)) ;
-        assertEquals(map.get(b2), ref.get(b2)) ;
+        assertEquals(map.get(b1), ref.get(b1));
+        assertEquals(map.get(b2), ref.get(b2));
         assertEquals(map.get(b61), ref.get(b61));
         assertEquals(map.size(), ref.size());
 
@@ -281,7 +282,7 @@ public class TestMyHashMap {
             assertEquals(map.get(bm), ref.get(bm));
             map.put(bm, m * 61);
             ref.put(bm, m * 61);
-            assertEquals(map.containsKey(bm),ref.containsKey(bm) );
+            assertEquals(map.containsKey(bm), ref.containsKey(bm));
             assertEquals(map.get(bm), ref.get(bm));
             assertEquals(map.get(b61), ref.get(b61));
             assertEquals(map.size(), ref.size());
@@ -299,24 +300,38 @@ public class TestMyHashMap {
         }
     }
 
-    private static class Bee {
+    private static class Bee implements Comparable<Bee> {
         int b;
 
         Bee(int b) {
             this.b = b;
         }
 
+        /**
+         * TODO: 为什么修改 hashCode 方式之后就可以解决冲突
+         */
         @Override
         public int hashCode() {
-            return -61;
+            return Math.floorMod(b, 61);
         }
+
 
         @Override
         public boolean equals(Object o) {
-//            if (o instanceof Bee other) {
-//                return Math.abs(b - other.b) < 61;
-//            }
+            if (o instanceof Bee) {
+                return Math.abs(this.b - ((Bee) o).b) < 61;
+            }
             return false;
+        }
+
+        @Override
+        public int compareTo(Bee o) {
+            if (b == o.b)
+                return 0;
+            else if (b > o.b)
+                return 1;
+            else
+                return -1;
         }
     }
 }

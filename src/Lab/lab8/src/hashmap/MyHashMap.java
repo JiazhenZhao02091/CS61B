@@ -2,10 +2,7 @@ package Lab.lab8.src.hashmap;
 
 import com.sun.security.auth.UnixNumericUserPrincipal;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Set;
+import java.util.*;
 
 /**
  * A hash table-backed Map implementation. Provides amortized constant time
@@ -15,12 +12,12 @@ import java.util.Set;
  *
  * @author JiazhenZhao
  */
-public class MyHashMap<K, V> implements Map61B<K, V> {
+public class MyHashMap<K extends Comparable<K>, V> implements Map61B<K, V> {
     /**
      * Protected helper class to store key/value pairs
      * The protected qualifier allows subclass access
      */
-    protected class Node {
+    public class Node {
         K key;
         V value;
 
@@ -103,7 +100,6 @@ public class MyHashMap<K, V> implements Map61B<K, V> {
         // 插入数据
         for (Node node : tmp_list)
             put(node.key, node.value);
-        System.out.println("resize successful !!!");
     }
 
     /**
@@ -133,10 +129,11 @@ public class MyHashMap<K, V> implements Map61B<K, V> {
 
     public Node findNode(Node node) {
         int hash_index = node.key.hashCode();
+        hash_index = Math.floorMod(hash_index, initialCapacity);
         if (buckets[hash_index] == null)
             return null;
         for (Node n : buckets[hash_index]) {
-            if (n.key == node.key)
+            if (n.key.compareTo(node.key) == 0)
                 return n;
         }
         return null;
@@ -183,7 +180,6 @@ public class MyHashMap<K, V> implements Map61B<K, V> {
     @Override
     public void put(K key, V value) {
         Node node = createNode(key, value);
-        System.out.println("put  : " + node.key + "  " + node.value);
     }
 
     @Override
