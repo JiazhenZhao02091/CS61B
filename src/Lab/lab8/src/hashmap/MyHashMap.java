@@ -5,6 +5,12 @@ import com.sun.security.auth.UnixNumericUserPrincipal;
 import java.util.*;
 
 /**
+ * @author JiazhenZhao
+ * 2024/2/23
+ * 类说明：
+ */
+
+/**
  * A hash table-backed Map implementation. Provides amortized constant time
  * access to elements via get(), remove(), and put() in the best case.
  * <p>
@@ -208,17 +214,38 @@ public class MyHashMap<K extends Comparable<K>, V> implements Map61B<K, V> {
 
     @Override
     public Set<K> keySet() {
-        return null;
+        Set<K> set = new HashSet<>();
+        for (int i = 0; i < initialCapacity; i++) {
+            if (buckets[i] != null) {
+                for (Node node : buckets[i]) {
+                    set.add(node.key);
+                }
+            }
+        }
+        return set;
     }
 
     @Override
     public V remove(K key) {
+        Node node = new Node(key);
+        node = findNode(node);
+        if (node == null)
+            return null;
+        int hash_index = node.key.hashCode();
+        hash_index = Math.floorMod(hash_index, initialCapacity);
+        for (Node n : buckets[hash_index]) {
+            if (n.key.compareTo(key) == 0) {
+                buckets[hash_index].remove(n);
+                return n.value;
+            }
+        }
         return null;
     }
 
-    private class MyHashMapIterator<K> implements Iterator<K>{
+    private class MyHashMapIterator<K> implements Iterator<K> {
 
         private int position;
+
         @Override
         public boolean hasNext() {
             //TODO:
@@ -230,9 +257,9 @@ public class MyHashMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         @Override
         public K next() {
             K key = null;
-            for(Node n : buckets[position])
+            for (Node n : buckets[position])
                 key = (K) n.key;
-            position ++;
+            position++;
             return key;
         }
     }

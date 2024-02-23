@@ -26,7 +26,6 @@ public class TestMyHashMapExtra {
         assertTrue(q.containsKey("a"));
         assertTrue(q.containsKey("b"));
         assertTrue(q.containsKey("d"));
-//        assertThat(q.containsKey("e"));
     }
 
     /**
@@ -70,9 +69,6 @@ public class TestMyHashMapExtra {
         }
         assertEquals(455, b.size()); //keys are there
         Set<String> keySet = b.keySet();
-        /*
-        assertThat(values).containsExactlyElementsIn(keySet);
-        assertThat(keySet).containsExactlyElementsIn(values);
-        */
+        assertEquals(values, keySet);
     }
 }

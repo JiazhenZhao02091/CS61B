@@ -1,11 +1,11 @@
 //package Lab.lab8.tests.speed;
 //
+//import Lab.lab8.src.hashmap.Map61B;
 //import edu.princeton.cs.algs4.Stopwatch;
 //import java.util.*;
 //
-//import hashmap.Map61B;
+//import static Lab.lab8.src.hashmap.MyHashMapFactory.createBucketedMap;
 //
-//import static hashmap.MyHashMapFactory.createBucketedMap;
 //
 ///** Performs a timing test on three different set implementations.
 // *  @author Neil Kulkarni adapted from Josh Hug, Brendan Hu
@@ -19,11 +19,10 @@
 //        int N;
 //        Scanner input = new Scanner(System.in);
 //
-//        System.out.println("""
-//
-//                 This program inserts random Strings of length L
-//                 into different types of maps as <String, Integer> pairs.
-//                """);
+////        System.out.println("""
+////                 This program inserts random Strings of length L
+////                 into different types of maps as <String, Integer> pairs.
+////                """);
 //        System.out.print("What would you like L to be?: ");
 //        int L = waitForPositiveInt(input);
 //
