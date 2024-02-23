@@ -23,12 +23,9 @@ public class TestBSTMapExtra {
             b.put("hi" + i, 1);
             values.add("hi" + i);
         }
-        /*
-        assertEquals(b.size()).isEqualTo(455); //keys are there
+        assertEquals(b.size(), 455); //keys are there
         Set<String> keySet = b.keySet();
-        assertEquals(values).containsExactlyElementsIn(keySet).inOrder();
-        assertEquals(keySet).containsExactlyElementsIn(values).inOrder();
-         */
+        assertEquals(values, keySet);
     }
 
     /* Remove Test

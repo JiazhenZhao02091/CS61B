@@ -1,6 +1,6 @@
 package Course.course5;
 
-import Project.project1A.ArrayDeque;
+import Project.project1.project1A.ArrayDeque;
 import org.junit.Test;
 
 /**

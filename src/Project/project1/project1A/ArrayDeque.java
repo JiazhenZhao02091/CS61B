@@ -1,13 +1,11 @@
 package Project.project1.project1A;
 
-import com.sun.xml.internal.bind.v2.TODO;
-
 /**
  * @author JiazhenZhao
  * 2024/1/20
  * 类说明：
  */
-public class ArrayDeque<T> {
+public class ArrayDeque<T>{
     public T[] items;
     public int size;
     public int first;
