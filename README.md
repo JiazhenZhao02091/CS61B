@@ -9,7 +9,7 @@
   - 2018spring
     - [x] [homework0 A Java Crash Course](https://sp18.datastructur.es/materials/hw/hw0/hw0)
     - [x] [homework1 Packages, Interfaces, Generics, Exceptions, Iteration](https://sp18.datastructur.es/materials/hw/hw1/hw1)
-    - [homework2  Percolation](https://sp18.datastructur.es/materials/hw/hw2/hw2)
+    - [x] [homework2  Percolation](https://sp18.datastructur.es/materials/hw/hw2/hw2)
     - [homework3 Hashing](https://sp18.datastructur.es/materials/hw/hw3/hw3)
     - [homework4 8 Puzzle](https://sp18.datastructur.es/materials/hw/hw4/hw4)
     - [homework5 Seam Carving](https://sp18.datastructur.es/materials/hw/hw5/hw5)
@@ -17,11 +17,11 @@
     - [homework7 Huffman Coding](https://sp18.datastructur.es/materials/hw/hw7/hw7)
   - 2023spring
     - [x] [homework0  A Java Crash Course ](https://sp23.datastructur.es/materials/hw/hw0b/) 
-    - [homework2  Percolation](https://sp23.datastructur.es/materials/hw/hw2/)
+    - [x] [homework2  Percolation](https://sp23.datastructur.es/materials/hw/hw2/)
 - lab
   - 2018spring
     - [x] [lab01 javac, java, git](https://sp18.datastructur.es/materials/lab/lab1/lab1)
-    - [Lab 2 setup: Setting Up IntelliJ](https://sp18.datastructur.es/materials/lab/lab2setup/lab2setup)
+    - [x] [Lab 2 setup: Setting Up IntelliJ](https://sp18.datastructur.es/materials/lab/lab2setup/lab2setup)
     - [Lab 3: Unit Testing with JUnit, Debugging](https://sp18.datastructur.es/materials/lab/lab3/lab3)
     - [x] [Lab 5: Getting Started on Project 2](https://sp18.datastructur.es/materials/lab/lab5/lab5)
     - [x] [Lab 6: Getting Started on Project 2, Phase 2]()
