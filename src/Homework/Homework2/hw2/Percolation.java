@@ -1,6 +1,7 @@
 package Homework.Homework2.hw2;
 
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
+
 /**
  * @author JiazhenZhao
  * 2024/2/24
@@ -29,7 +30,7 @@ public class Percolation {
 
     // open the site (row, col) if it is not open already
     public void open(int row, int col) {
-        if(graph[row][col] == 0) {
+        if (graph[row][col] == 0) {
             graph[row][col] = 1;
             open_size++;
         }
@@ -50,9 +51,9 @@ public class Percolation {
     public boolean percolates() {
         boolean[] tmp_flag = new boolean[size];
         tmp_flag[0] = true;
-        for(int i = 0 ; i < size - 1; i ++){
-            for(int j = 0 ; j < size; j ++){
-                if(graph[i][j] == 1 && graph[i+1][j] == 1 && tmp_flag[0]){
+        for (int i = 0; i < size - 1; i++) {
+            for (int j = 0; j < size; j++) {
+                if (graph[i][j] == 1 && graph[i + 1][j] == 1 && tmp_flag[0]) {
                     tmp_flag[i + 1] = true;
                 }
             }
@@ -60,19 +61,19 @@ public class Percolation {
         return tmp_flag[size - 1];
     }             // does the system percolate?
 
-    public void printGraph(){
+    public void printGraph() {
         System.out.println("PRINT GRAPH --- ");
-        for (int i = 0 ; i < size; i ++) {
+        for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++)
                 System.out.print(isOpen(i, j) + " ");
             System.out.println();
         }
         System.out.println("--- PRINT END");
     }
+
     public static void main(String[] args) {
 
     }   // use for unit testing (not required)
-
 
 
 }
