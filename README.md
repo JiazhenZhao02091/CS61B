@@ -10,7 +10,7 @@
     - [x] [homework0 A Java Crash Course](https://sp18.datastructur.es/materials/hw/hw0/hw0)
     - [x] [homework1 Packages, Interfaces, Generics, Exceptions, Iteration](https://sp18.datastructur.es/materials/hw/hw1/hw1)
     - [x] [homework2  Percolation](https://sp18.datastructur.es/materials/hw/hw2/hw2)
-    - [homework3 Hashing](https://sp18.datastructur.es/materials/hw/hw3/hw3)
+    - [x] [homework3 Hashing](https://sp18.datastructur.es/materials/hw/hw3/hw3)
     - [homework4 8 Puzzle](https://sp18.datastructur.es/materials/hw/hw4/hw4)
     - [homework5 Seam Carving](https://sp18.datastructur.es/materials/hw/hw5/hw5)
     - [homework6 Boggle](https://sp18.datastructur.es/materials/hw/hw6/hw6)
@@ -31,7 +31,7 @@
     - [lab13 Radix Sorts](https://sp18.datastructur.es/materials/lab/lab13/lab13)
     - [lab15 HugLife](https://sp18.datastructur.es/materials/lab/lab15/lab15)
   - 2023spring
-    - [lab02 Debugging](https://sp23.datastructur.es/materials/lab/lab02/)
+    - [x] [lab02 Debugging](https://sp23.datastructur.es/materials/lab/lab02/)
     - [x] [lab03 Timing](https://sp23.datastructur.es/materials/lab/lab03/) 
     - [Lab 05: Advanced Git and Debugging](https://sp23.datastructur.es/materials/lab/lab05/)
     - [x] [lab07 BSTMap](https://sp23.datastructur.es/materials/lab/lab07/)

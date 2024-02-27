@@ -1,8 +1,9 @@
 //package Lab.lab2.tests.adventure;
 //
+//import Lab.lab2.src.adventure.AdventureGame;
+//import Lab.lab2.tests.helpers.CaptureSystemOutput;
 //import edu.princeton.cs.algs4.In;
 //import edu.princeton.cs.algs4.StdRandom;
-//import helpers.CaptureSystemOutput;
 //import org.junit.jupiter.api.DisplayName;
 //import org.junit.jupiter.params.ParameterizedTest;
 //import org.junit.jupiter.params.provider.ValueSource;
@@ -17,7 +18,7 @@
 //public class AdventureGameTests {
 //    public static final String PREFIX_PATH = "tests/data/";
 //
-//    public static final Map<String, Integer> STAGE_TO_LINE_CORRECT = Map.of(
+//    public static final Map<String, Integer> STAGE_TO_LINE_CORRECT = Map;.of(
 //            "BeeCountingStage", 14,
 //            "SpeciesListStage", 29,
 //            "PalindromeStage", 37,

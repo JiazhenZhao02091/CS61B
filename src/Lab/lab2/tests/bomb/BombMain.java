@@ -1,5 +1,6 @@
-package Lab.lab2.src.bomb;
+package Lab.lab2.tests.bomb;
 
+import Lab.lab2.src.bomb.Bomb;
 import Lab.lab2.src.common.IntList;
 
 public class BombMain {

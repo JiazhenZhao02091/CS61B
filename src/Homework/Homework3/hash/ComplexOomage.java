@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ComplexOomage implements Oomage {
-    protected List<Integer> params;
+    protected List<Integer> params; // list has any length thar (0, 255)
     private static final double WIDTH = 0.05;
 
     @Override

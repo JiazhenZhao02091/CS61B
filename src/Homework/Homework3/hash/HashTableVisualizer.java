@@ -17,7 +17,6 @@ public class HashTableVisualizer {
         double scale = 1.0;
         int N = 100;
         int M = 10;
-
         HashTableDrawingUtility.setScale(scale);
         List<Oomage> oomies = new ArrayList<>();
         for (int i = 0; i < N; i += 1) {
