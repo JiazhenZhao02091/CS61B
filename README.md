@@ -22,7 +22,7 @@
   - 2018spring
     - [x] [lab01 javac, java, git](https://sp18.datastructur.es/materials/lab/lab1/lab1)
     - [x] [Lab 2 setup: Setting Up IntelliJ](https://sp18.datastructur.es/materials/lab/lab2setup/lab2setup)
-    - [Lab 3: Unit Testing with JUnit, Debugging](https://sp18.datastructur.es/materials/lab/lab3/lab3)
+    - [x] [Lab 3: Unit Testing with JUnit, Debugging](https://sp18.datastructur.es/materials/lab/lab3/lab3)
     - [x] [Lab 5: Getting Started on Project 2](https://sp18.datastructur.es/materials/lab/lab5/lab5)
     - [x] [Lab 6: Getting Started on Project 2, Phase 2]()
     - [lab10 Priority Queues](https://sp18.datastructur.es/materials/lab/lab10/lab10)

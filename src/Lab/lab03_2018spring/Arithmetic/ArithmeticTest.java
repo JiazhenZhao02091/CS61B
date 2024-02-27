@@ -22,7 +22,7 @@ public class ArithmeticTest {
 
     /** Performs a few arbitrary tests to see if the sum method is correct */
 
-    @Test 
+    @Test(timeout = 1000)
     public void testSum() {
 
         assertEquals(11, Arithmetic.sum(5, 6));

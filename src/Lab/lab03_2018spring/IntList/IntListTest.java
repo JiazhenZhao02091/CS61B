@@ -1,7 +1,7 @@
 //package Lab.lab03_2018spring.IntList;
 //
 //import static org.junit.Assert.*;
-//
+//import Lab.lab03_2018spring.IntList.IntList;
 //import org.junit.Test;
 //
 //public class IntListTest {
