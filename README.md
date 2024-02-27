@@ -25,7 +25,7 @@
     - [x] [Lab 3: Unit Testing with JUnit, Debugging](https://sp18.datastructur.es/materials/lab/lab3/lab3)
     - [x] [Lab 5: Getting Started on Project 2](https://sp18.datastructur.es/materials/lab/lab5/lab5)
     - [x] [Lab 6: Getting Started on Project 2, Phase 2]()
-    - [lab10 Priority Queues](https://sp18.datastructur.es/materials/lab/lab10/lab10)
+    - [x] [lab10 Priority Queues](https://sp18.datastructur.es/materials/lab/lab10/lab10)
     - [lab11 Graph](https://sp18.datastructur.es/materials/lab/lab11/lab11)
     - [lab12 Merge Sort and Quick Sort](https://sp18.datastructur.es/materials/lab/lab12/lab12)
     - [lab13 Radix Sorts](https://sp18.datastructur.es/materials/lab/lab13/lab13)
