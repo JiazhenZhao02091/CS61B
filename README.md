@@ -33,7 +33,7 @@
   - 2023spring
     - [x] [lab02 Debugging](https://sp23.datastructur.es/materials/lab/lab02/)
     - [x] [lab03 Timing](https://sp23.datastructur.es/materials/lab/lab03/) 
-    - [Lab 05: Advanced Git and Debugging](https://sp23.datastructur.es/materials/lab/lab05/)
+    - [x] [Lab 05: Advanced Git and Debugging](https://sp23.datastructur.es/materials/lab/lab05/)
     - [x] [lab07 BSTMap](https://sp23.datastructur.es/materials/lab/lab07/)
     - [x] [lab08 HashMap](https://sp23.datastructur.es/materials/lab/lab08/)
     - [lab09 Project2B Checkpoint](https://sp23.datastructur.es/materials/lab/lab09/)
