@@ -36,7 +36,7 @@
     - [x] [Lab 05: Advanced Git and Debugging](https://sp23.datastructur.es/materials/lab/lab05/)
     - [x] [lab07 BSTMap](https://sp23.datastructur.es/materials/lab/lab07/)
     - [x] [lab08 HashMap](https://sp23.datastructur.es/materials/lab/lab08/)
-    - [lab09 Project2B Checkpoint](https://sp23.datastructur.es/materials/lab/lab09/)
+    - [x] [lab09 Project2B Checkpoint](https://sp23.datastructur.es/materials/lab/lab09/)
     - [lab12 BYOW Introduction(Project3)](https://sp23.datastructur.es/materials/lab/lab12/)
     - [lab13 Getting Started on Project 3, Phase 2](https://sp23.datastructur.es/materials/lab/lab13/)
 - project
