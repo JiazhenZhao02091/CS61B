@@ -1,8 +1,8 @@
 package aoa.guessers;
 
 import aoa.utils.FileUtils;
+
 import java.util.List;
-import java.util.Map;
 
 public class PAGALetterFreqGuesser implements Guesser {
     private final List<String> words;
@@ -21,6 +21,6 @@ public class PAGALetterFreqGuesser implements Guesser {
 
     public static void main(String[] args) {
         PAGALetterFreqGuesser pagalfg = new PAGALetterFreqGuesser("data/example.txt");
-        System.out.println(pagalfg.getGuess("----", List.of('e')));
+//        System.out.println(pagalfg.getGuess("----", List.of('e')));
     }
 }

@@ -1,8 +1,8 @@
 package aoa.guessers;
 
 import aoa.utils.FileUtils;
+
 import java.util.List;
-import java.util.Map;
 
 public class PatternAwareLetterFreqGuesser implements Guesser {
     private final List<String> words;
@@ -21,6 +21,6 @@ public class PatternAwareLetterFreqGuesser implements Guesser {
 
     public static void main(String[] args) {
         PatternAwareLetterFreqGuesser palfg = new PatternAwareLetterFreqGuesser("data/example.txt");
-        System.out.println(palfg.getGuess("-e--", List.of('e')));
+//        System.out.println(palfg.getGuess("-e--", List.of('e')));
     }
 }

@@ -1,6 +1,8 @@
 package aoa.guessers;
 
 import aoa.utils.FileUtils;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -32,11 +34,13 @@ public class NaiveLetterFreqGuesser implements Guesser {
     }
 
     public static void main(String[] args) {
-        NaiveLetterFreqGuesser nlfg = new NaiveLetterFreqGuesser("data/example.txt");
+        NaiveLetterFreqGuesser nlfg = new NaiveLetterFreqGuesser("F:\\workspace\\CS61B\\skeleton-sp23-main\\proj0\\data\\example.txt");
         System.out.println("list of words: " + nlfg.words);
         System.out.println("frequency map: " + nlfg.getFrequencyMap());
 
-        List<Character> guesses = List.of('e', 'l');
+        List<Character> guesses = new ArrayList<>();
+        guesses.add('e');
+        guesses.add('l');
         System.out.println("guess: " + nlfg.getGuess(guesses));
     }
 }
